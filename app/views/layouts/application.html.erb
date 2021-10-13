@@ -11,6 +11,15 @@
   </head>
 
   <body>
+    <div>
+      <%= render 'shared/footer', time: @time %> 
+      <br>
+    </div>
+
+    <div>
+        <%= render 'shared/header' %>
+        <br>
+    </div>
     <%= yield %>
   </body>
 </html>
