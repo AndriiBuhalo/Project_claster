@@ -10,6 +10,11 @@ describe "creation" do
     expect(User.all.count).to eq(1)
   end
 
+  describe "GET /edit" do
+    it 'id mast be not null' do
+      expect(@user.id).should_not be_nil
+    end
+  end
 end
 
   context "GET /index" do
