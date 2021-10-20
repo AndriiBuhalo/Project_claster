@@ -4,23 +4,35 @@ class UsersController < ApplicationController
   # GET /users or /users.json
   def index
     @users = User.all
+     set_meta_tags site: 'User all'         
   end
 
   # GET /users/1 or /users/1.json
   def show
+    set_meta_tags title: @user.name,
+                  site: 'User Form',
+                  reverse: true   
   end
 
   # GET /users/new
   def new
     @user = User.new
+    set_meta_tags site: 'New user' 
   end
 
   # GET /users/1/edit
   def edit
+    @user = User.find(params[:id])
+    set_meta_tags title: @user.name,
+                  site: 'Edit Form',
+                  reverse: true
   end
 
   # POST /users or /users.json
   def create
+     set_meta_tags title: @user.name,
+                  site: 'Edit Form',
+                  reverse: true
     @user = User.new(user_params)
 
     respond_to do |format|
@@ -48,7 +60,7 @@ class UsersController < ApplicationController
   end
 
   # DELETE /users/1 or /users/1.json
-  def destroy
+  def destroy 
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: "User was successfully destroyed." }

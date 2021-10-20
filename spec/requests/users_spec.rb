@@ -1,20 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
+before(:each) do
+  @user = User.create(name: Faker::Name.first_name, email:"helo@gmail.com")
+end
+
+describe "creation" do
+  it "should have one item after creation" do
+    expect(User.all.count).to eq(1)
+  end
+
+end
+
   context "GET /index" do
     it 'returns a success responce' do
       get :index
-      expect(response.status).to eq(200) # response.success? та сама лінійка що і в коменті
+      expect(response).to be_successful # response.success? та сама лінійка що і в коменті
     end
   end
-
-  # describe "GET #index" do
-  #   before do
-  #     get :index
-  #   end
-
-  #   it
-  # end
 
   context "GET /show" do
     it 'returns a success responce' do
@@ -22,7 +25,6 @@ RSpec.describe UsersController, type: :controller do
       get :show, params: {id: user.to_param}
       # binding.pry
       expect(response.status).to eq(200)
-      # expect(response).to be_success # response.success?
     end
   end
 
