@@ -10,8 +10,8 @@ class UsersController < ApplicationController
   # GET /users/1 or /users/1.json
   def show
     set_meta_tags title: @user.name,
-    site: 'User Form',
-    reverse: true   
+                  site: 'User Form',
+                  reverse: true   
   end
 
   # GET /users/new
@@ -24,15 +24,15 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     set_meta_tags title: @user.name,
-    site: 'Edit Form',
-    reverse: true
+                  site: 'Edit Form',
+                  reverse: true
   end
 
   # POST /users or /users.json
   def create
     set_meta_tags title: @user.name,
-    site: 'Edit Form',
-    everse: true
+                  site: 'Edit Form',
+                  everse: true
     @user = User.new(user_params)
 
     respond_to do |format|
