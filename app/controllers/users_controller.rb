@@ -82,6 +82,6 @@ class UsersController < ApplicationController
     end
 
     def chek_admin
-      redirect_to root_path, notice: "not now" unless current_user&.admin?
+      redirect_to root_path, notice: "you are not admin" unless current_user&.admin?
     end
 end

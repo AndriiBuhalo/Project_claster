@@ -44,6 +44,7 @@
           <% if current_user.admin?  %>
             <li class="nav-item"><%= link_to 'Users all', users_path %></li> 
           <% end  %>
+          <li class="nav-item"><a href="secrets/index" class="nav-link">Secrets</a></li>
           <li class="nav-itemx"><%= link_to 'Edit Account', edit_user_registration_path %></li>
           <li class="nav-item"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
         <% else %>
