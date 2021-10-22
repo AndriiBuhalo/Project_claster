@@ -40,6 +40,7 @@ gem 'slim'
 
 gem 'meta-tags'
 
+gem 'devise'
 
 
 # Run against this stable release
