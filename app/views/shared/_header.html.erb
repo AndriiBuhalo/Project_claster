@@ -46,7 +46,7 @@
           <% end  %>
           <li class="nav-item"><%= link_to 'New Posts', new_micropost_path %></li>
           <li class="nav-item"><%= link_to 'All Posts', microposts_path %></li>
-          <li class="nav-item"><a href="secretsindex" class="nav-link">Secrets</a></li>
+          <li class="nav-item"><%= link_to 'Secrets', secrets_index_path %></li>
           <li class="nav-item"><%= link_to 'Edit Account', edit_user_registration_path %></li>
           <li class="nav-item"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
         <% else %>
