@@ -3,8 +3,14 @@ class MicropostsController < ApplicationController
 
   # GET /microposts or /microposts.json
   def index
-    @microposts = Micropost.all
+    if current_user.admin?
+      @microposts = Micropost.all
+    else
+      @microposts = Micropost.where(user_id: current_user.id)
+    end
   end
+
+  
 
   # GET /microposts/1 or /microposts/1.json
   def show
@@ -21,7 +27,7 @@ class MicropostsController < ApplicationController
 
   # POST /microposts or /microposts.json
   def create
-    @micropost = Micropost.new(micropost_params)
+    @micropost = Micropost.new(micropost_params.merge(user_id: current_user.id))
 
     respond_to do |format|
       if @micropost.save
@@ -59,8 +65,13 @@ class MicropostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_micropost
+      # if Micropost.admin?
+      #   @microposts = Micropost.all
+      # else
       @micropost = Micropost.find(params[:id])
+      # end
     end
+
 
     # Only allow a list of trusted parameters through.
     def micropost_params
