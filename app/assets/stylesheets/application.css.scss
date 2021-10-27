@@ -89,6 +89,13 @@ ul li a:hover {
     padding: 25px;
 }
 
+.main {
+    min-height: 400px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 25px;
+}
+
 .empty {
     width: 100%;
     height: 80px;
@@ -143,4 +150,113 @@ footer ul {
 
 .dropdown-toggle {
     outline: 0;
+}
+
+.login-form {
+    width: 350px;
+    height: 360px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    color: white;
+    font-family: "Roboto Slab", serif;
+}
+
+.login-form-title {
+    letter-spacing: 1px;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.login-form-title.login-title {
+    margin-bottom: 20px;
+}
+
+.form-input {
+    position: relative;
+}
+
+.form-input.login input {
+    margin-top: 12px;
+}
+
+.form-input.login .input-icon {
+    top: 18px;
+}
+
+.input-icon .fa {
+    color: #000;
+    position: absolute;
+    top: 23px;
+    left: 10px;
+    font-size: 16px;
+}
+
+.form-input input {
+    width: 100%;
+    padding: 5px 10px 5px 30px;
+    height: 40px;
+    background-color: white;
+    margin-top: 8px;
+}
+
+.form-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.form-checkbox p {
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+.form-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: rgb(53, 196, 231);
+    margin-top: 20px;
+    letter-spacing: 1px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.form-btn:hover {
+    background-color: rgb(44, 158, 187);
+}
+
+.form-account-register {
+    text-align: center;
+    margin-top: 1.1rem;
+    font-size: 0.8rem;
+}
+
+.form-recovery {
+    margin-left: 5px;
+    color: rgb(53, 196, 231);
+    cursor: pointer;
+}
+
+.form-recovery {
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.link-to-text-color {
+    margin-left: 5px;
+    color: rgb(53, 196, 231);
+    cursor: pointer;
+    background-color: transparent;
 }
