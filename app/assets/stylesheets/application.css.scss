@@ -62,11 +62,22 @@ header {
     border-radius: 50%;
 }
 
+.logo h4 {
+    font-family: "Fredoka One", cursive;
+    font-size: 1.3rem;
+    color: white;
+    letter-spacing: 0.01rem;
+    margin-left: 10px;
+}
+
 header .nav {
     display: flex;
-    width: 75%;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+}
+
+header ul li {
+    padding: 0 20px;
 }
 
 ul li a {
@@ -104,7 +115,7 @@ ul li a:hover {
 footer {
     width: 100%;
     background-color: black;
-    height: 120px;
+    height: 130px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -118,12 +129,14 @@ footer ul {
     width: 30%;
 }
 
-.b-example-divider {
-    height: 3rem;
-    background-color: rgba(0, 0, 0, .1);
-    border: solid rgba(0, 0, 0, .15);
-    border-width: 1px 0;
-    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+footer ul li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+footer ul li span {
+    margin-left: 10px;
 }
 
 .form-control-dark {
@@ -142,6 +155,10 @@ footer ul {
 .bi {
     vertical-align: -.125em;
     fill: currentColor;
+}
+
+.text-muted {
+    color: #fff;
 }
 
 .text-small {
@@ -259,4 +276,75 @@ footer ul {
     color: rgb(53, 196, 231);
     cursor: pointer;
     background-color: transparent;
+}
+
+.main-container {
+    height: 100%;
+    width: 100%;
+    padding: 25px;
+    background-color: rgba(245, 243, 236, 0.918);
+}
+
+.content {
+    width: 360px;
+    margin: 0 auto;
+}
+
+.content.users {
+    width: 650px;
+}
+
+table {
+    width: 700px;
+    border: none;
+    margin-bottom: 20px;
+    font-family: "Roboto Slab", serif;
+}
+
+table thead th {
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    padding: 10px 15px;
+    background: #d8d8d8;
+    font-size: 14px;
+    border: 1px solid #dddddd;
+}
+
+table thead tr th:first-child {
+    width: 180px;
+}
+
+table thead tr th:last-child {
+    width: 260px;
+}
+
+table tbody td {
+    text-align: left;
+    padding: 10px 15px;
+    font-size: 14px;
+    vertical-align: center;
+    border: 1px solid #dddddd;
+}
+
+table tbody tr:nth-child(even) {
+    background: #f3f3f3;
+}
+
+.actions-btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.actions-btn button {
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.4s ease-in-out;
+    font-family: "Roboto Slab", serif;
+}
+
+.actions-btn button:hover {
+    color: rgba(0, 0, 0, 0.541);
 }

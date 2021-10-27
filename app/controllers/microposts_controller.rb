@@ -4,8 +4,10 @@ class MicropostsController < ApplicationController
   # GET /microposts or /microposts.json
   def index
     if current_user.admin?
+      set_meta_tags site: 'Post all' 
       @microposts = Micropost.all
     else
+      set_meta_tags site: 'Post all' 
       @microposts = Micropost.where(user_id: current_user.id)
     end
   end
@@ -14,19 +16,23 @@ class MicropostsController < ApplicationController
 
   # GET /microposts/1 or /microposts/1.json
   def show
+    set_meta_tags site: 'Show post' 
   end
 
   # GET /microposts/new
   def new
+    set_meta_tags site: 'Create post' 
     @micropost = Micropost.new
   end
 
   # GET /microposts/1/edit
   def edit
+    set_meta_tags site: 'Edit post' 
   end
 
   # POST /microposts or /microposts.json
   def create
+    set_meta_tags site: 'Create post' 
     @micropost = Micropost.new(micropost_params.merge(user_id: current_user.id))
 
     respond_to do |format|
