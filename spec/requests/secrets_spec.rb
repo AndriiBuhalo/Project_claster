@@ -1,10 +1,14 @@
 require 'rails_helper'
 
+
+
+
 RSpec.describe "Secrets", type: :request do
   describe "GET /index" do
     it "returns http success" do
-      get "/secrets/index"
-      expect(response).to have_http_status(:success)
+      login_as(FactoryBot.create(:user))
+      expect(request.session[:user_id]).not_to be_nil
+      
     end
   end
 

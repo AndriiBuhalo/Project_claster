@@ -26,7 +26,7 @@ RSpec.describe User, type: :model do
 
     #or
     it 'user is validate test ' do
-      user = User.new(name: Faker::Name.first_name, email: Faker::Internet.email).save
+      user = FactoryBot.build(:user).save
       expect(user).to eq(true)
     end
 

@@ -1,7 +1,116 @@
-// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-@import "bootstrap-sprockets";
-@import "bootstrap";
-// header
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+*,
+:before,
+:after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: url("bg4.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.541);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo span {
+    display: block;
+    margin-left: 10px;
+    font-family: "Fredoka One", cursive;
+    font-size: 25px;
+    color: white;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+header .nav {
+    display: flex;
+    width: 75%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul li a {
+    font-family: "Fredoka One", cursive;
+    font-size: 0.9rem;
+    color: white;
+    letter-spacing: 0.03rem;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover {
+    color: rgb(250, 218, 37);
+}
+
+.main-container {
+    min-height: 400px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.829);
+    padding: 25px;
+}
+
+.empty {
+    width: 100%;
+    height: 80px;
+}
+
+footer {
+    width: 100%;
+    background-color: black;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 35px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+footer ul {
+    width: 30%;
+}
+
 .b-example-divider {
     height: 3rem;
     background-color: rgba(0, 0, 0, .1);
@@ -12,7 +121,7 @@
 
 .form-control-dark {
     color: #fff;
-    background-color: #fff;
+    background-color: var(--bs-dark);
     border-color: var(--bs-gray);
 }
 
@@ -34,24 +143,4 @@
 
 .dropdown-toggle {
     outline: 0;
-}
-
-// footer
-.b-example-divider {
-    height: 3rem;
-    background-color: rgba(0, 0, 0, .1);
-    border: solid rgba(0, 0, 0, .15);
-    border-width: 1px 0;
-    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-}
-
-.bi {
-    vertical-align: -.125em;
-    fill: currentColor;
-}
-
-//body
-body {
-    background-color: rgb(247, 238, 121);
-    background-size: cover;
 }
