@@ -1,14 +1,28 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag 'microposts' %>
 
-<p>
-  <strong>Content:</strong>
-  <%= @micropost.content %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @micropost.user.name %>
-</p>
-
-<%= link_to 'Edit', edit_micropost_path(@micropost) %> |
+<div class="main-container">
+<div class="post-edit">
+<h4><span class="post-name"><%= @micropost.user.name %></span> post</h4>
+      <div class="post-content">
+          <h4><%= @micropost.context%></h4>
+          <p><%= @micropost.content %></p>
+      </div>
+  
+    <%= render @micropost.comments %>
+    <%= render 'comments/form' %>
+          
+<div class="post-edit-btn">
+  <button class="form-btn">
+           <%= link_to '', edit_micropost_path(@micropost) %> 
+            Edit
+         </button>
+  <button class="form-btn">
+           <%= link_to '', microposts_path %>
+            Back
+         </button>
+  </div>
+  <%= link_to 'Edit', edit_micropost_path(@micropost) %> 
 <%= link_to 'Back', microposts_path %>
+</div>
+</div>
+

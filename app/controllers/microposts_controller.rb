@@ -33,8 +33,7 @@ class MicropostsController < ApplicationController
   # POST /microposts or /microposts.json
   def create
     set_meta_tags site: 'Create post' 
-    @micropost = Micropost.new(micropost_params.merge(user_id: current_user.id))
-
+    @micropost = current_user.microposts.create(micropost_params)
     respond_to do |format|
       if @micropost.save
         format.html { redirect_to @micropost, notice: "Micropost was successfully created." }
@@ -81,6 +80,6 @@ class MicropostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def micropost_params
-      params.require(:micropost).permit(:content, :user_id)
+      params.require(:micropost).permit(:content, :context)
     end
 end

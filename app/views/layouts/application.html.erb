@@ -49,11 +49,12 @@
   </head>
 
   <body>
-      <%= render 'shared/header' %>
-      <div class="empty"></div>
-   
-    <%= yield %>
+  <div class="wrapper">
+    <%= render 'shared/header' %>
+    <div class="empty"></div>
     
+      <%= yield %>
       <%= render 'shared/footer' %>  
+    </div>
   </body>
 </html>
