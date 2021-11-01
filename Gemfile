@@ -42,7 +42,7 @@ gem 'meta-tags'
 
 gem 'devise'
 
-
+  
 
 # Run against this stable release
 group :development, :test do
