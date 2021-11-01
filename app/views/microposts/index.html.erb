@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag 'microposts' %>
+    <div class="main-container">
+         <div class="content users">
+         <% @microposts.each do |micropost|%>
+          <%= link_to micropost do %>
+            <div class="post">
+               <p class="post-user-name"><%= micropost.user.name %></p>
+               <div class="post-content">
+                  <h4><%= micropost.context %></h4>
+                  <p><%= micropost.content %></p>
+                   <%= link_to 'Destroy', micropost, method: :delete, data: { confirm: 'Are you sure?' } %>
+                   
+
+
+               </div>
+               <%# <div class="comments">
+                  <input type="text" placeholder="Add comments..." />
+                  <i class="fa fa-paper-plane" aria-hidden="true"></i>
+               </div> %>
+            </div>  
+                  <% end %>
+                  <% end %>
+         </div>
+      </div>
+  
+  

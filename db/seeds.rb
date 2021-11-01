@@ -1,1 +1,2 @@
-FactoryBot.create_list(:user,2)
+FactoryBot.create_list(:user,4)
+FactoryBot.create(:admin)

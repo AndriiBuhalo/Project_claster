@@ -19,6 +19,7 @@
     <title>Headers · Bootstrap v5.1</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/headers/">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
     
 
@@ -48,15 +49,12 @@
   </head>
 
   <body>
-    <div>
-      <%= render 'shared/header' %>
-    </div>
-    <%= yield %>
-
-    <div>
-      <%= render 'shared/footer' %> 
-    </div>
+  <div class="wrapper">
+    <%= render 'shared/header' %>
+    <div class="empty"></div>
     
-    
+      <%= yield %>
+      <%= render 'shared/footer' %>  
+    </div>
   </body>
 </html>

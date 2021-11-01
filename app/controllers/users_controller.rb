@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :chek_admin, only: :index
 
   # GET /users or /users.json
   def index
     @users = User.all
-    set_meta_tags site: 'User all'         
+    set_meta_tags site: 'User all'    
+       
   end
 
   # GET /users/1 or /users/1.json
@@ -77,5 +79,9 @@ class UsersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_params
       params.require(:user).permit(:name, :email)
+    end
+
+    def chek_admin
+      redirect_to root_path, notice: "you are not admin" unless current_user&.admin?
     end
 end
