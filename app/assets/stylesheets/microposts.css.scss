@@ -149,6 +149,14 @@ textarea {
     font-size: 1.3rem;
 }
 
+.comments-delete {
+    position: absolute;
+    bottom: 5px;
+    left: 400px;
+    color: rgb(22, 191, 233);
+    font-size: 5rem;
+}
+
 .post-name {
     text-transform: capitalize;
 }
