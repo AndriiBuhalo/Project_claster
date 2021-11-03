@@ -7,17 +7,18 @@
       <div class="post-content">
           <h1><%= @micropost.context%></h1>
           <% if @micropost.cover_picture.present?%>
-           <%= image_tag @micropost.cover_picture.variant(resize: "400x400")  %> 
+           <%= image_tag @micropost.cover_picture.variant(resize: "400x400") %> 
           <% end %>
           <p><%= @micropost.content %></p>
           </div>
-
+          
           <% if  user_signed_in? %>
             <%= render @micropost.comments %>
             <%= render 'comments/form' %>
-                <%= content_tag "div", id: "like-link-#{@micropost.id}" do %>
-                <%= render 'microposts/like_link', micropost: @micropost %>
-              <% end %>
+            <%= render 'microposts/upvote_link', micropost: @micropost %>
+            <%= p current_user.voted_up_by? @micropost %>
+
+            <%= render 'microposts/votes_score', micropost: @micropost %>
           <% end %>
 <div class="post-edit-btn">
   <button class="form-btn">

@@ -1,15 +1,24 @@
 #class MicropostsController
 class MicropostsController < ApplicationController
-  before_action :set_micropost, only: %i[show edit update destroy like]
+  before_action :set_micropost, only: %i[show edit update destroy upvote]
 
   def index
     if current_user.admin?
       set_meta_tags site: 'Post all'
-      @microposts = Micropost.all.order(cached_votes_score: :desc)
+      @microposts = Micropost.all
     else
       set_meta_tags site: 'Post all user'
-      @microposts = Micropost.where(user_id: current_user.id, cached_votes_score: :desc)
+      @microposts = Micropost.where(user_id: current_user.id)
     end
+  end
+
+  def upvote
+    if current_user.voted_up_by? @micropost
+      @micropost.unvote_by current_user
+    else
+      @micropost.upvote_by current_user
+    end
+    render "vote.js.erb"
   end
 
   def show
@@ -59,19 +68,7 @@ class MicropostsController < ApplicationController
     end
   end
 
-  def like
-    if current_user.voted_up_by? @micropost
-      @micropost.downvote_by current_user
-    elsif current_user.voted_down_by? @micropost
-      @micropost.upvote_by current_user
-    else 
-      #not voted
-      @micropost.upvote_by current_user
-    end
-    respond_to do |format|
-      format.js
-    end
-  end
+  
 
   private
 
