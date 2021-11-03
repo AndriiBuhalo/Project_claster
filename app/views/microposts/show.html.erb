@@ -16,8 +16,6 @@
             <%= render @micropost.comments %>
             <%= render 'comments/form' %>
             <%= render 'microposts/upvote_link', micropost: @micropost %>
-            <%= p current_user.voted_up_by? @micropost %>
-
             <%= render 'microposts/votes_score', micropost: @micropost %>
           <% end %>
 <div class="post-edit-btn">

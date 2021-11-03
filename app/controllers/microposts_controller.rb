@@ -13,7 +13,7 @@ class MicropostsController < ApplicationController
   end
 
   def upvote
-    if current_user.voted_up_by? @micropost
+    if current_user.voted_up_on? @micropost
       @micropost.unvote_by current_user
     else
       @micropost.upvote_by current_user
