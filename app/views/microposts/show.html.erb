@@ -1,25 +1,35 @@
 <%= stylesheet_link_tag 'microposts' %>
 
+
 <div class="main-container">
 <div class="post-edit">
-<h4><span class="post-name"><%= @micropost.user.name %></span> post</h4>
+<h5><span class="post-name"><%= @micropost.user.name %></span> post</h5>
       <div class="post-content">
-          <h4><%= @micropost.context%></h4>
+          <h1><%= @micropost.context%></h1>
+          <% if @micropost.cover_picture.present?%>
+           <%= image_tag @micropost.cover_picture.variant(resize: "400x400") %> 
+          <% end %>
           <p><%= @micropost.content %></p>
-      </div>
-  
-    <%= render @micropost.comments %>
-    <%= render 'comments/form' %>
+          </div>
           
-<div class="post-edit-btn">
-  <button class="form-btn">
-           <%= link_to 'Edit', edit_micropost_path(@micropost) %> 
-            
-         </button>
+          <% if  user_signed_in? %>
+            <%= render @micropost.comments %>
+            <%= render 'comments/form' %>
+            <%= render 'microposts/vote_link', micropost: @micropost %>
+            <%= render 'microposts/votes_score', micropost: @micropost %>
+              <div class="post-edit-btn">
+                <button class="form-btn">
+                  <%= link_to 'Edit', edit_micropost_path(@micropost) %> 
+                  
+                </button>
+          <% end %>
   <button class="form-btn">
            <%= link_to 'Back', microposts_path %>
             
          </button>
   </div>
+  
 </div>
+
+
 

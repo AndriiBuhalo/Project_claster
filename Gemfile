@@ -42,7 +42,14 @@ gem 'meta-tags'
 
 gem 'devise'
 
-  
+gem "image_processing", ">= 1.2"
+
+gem 'mini_magick'
+
+gem 'acts_as_votable'
+
+gem 'rubocop-rails', require: false
+
 
 # Run against this stable release
 group :development, :test do
@@ -53,11 +60,12 @@ group :development, :test do
   gem 'faker'
   gem 'pry-rails'
   gem 'simplecov'
+
+  gem 'rubocop', require: false
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
 end
-
-
-
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
