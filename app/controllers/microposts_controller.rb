@@ -1,6 +1,6 @@
 #class MicropostsController
 class MicropostsController < ApplicationController
-  before_action :set_micropost, only: %i[show edit update destroy ]
+  before_action :set_micropost, only: %i[show edit update destroy vote]
 
   def index
     if current_user.admin?
@@ -12,8 +12,8 @@ class MicropostsController < ApplicationController
     end
   end
 
-  def upvote
-    @micropost = Micropost.find(params[:id])
+  def vote
+    
     if current_user.voted_up_on? @micropost
       @micropost.unvote_by current_user
     else
@@ -22,16 +22,7 @@ class MicropostsController < ApplicationController
     render "vote.js.erb"
   end
   
-  def downvote
-    @micropost = Micropost.find(params[:id])
-    if current_user.voted_down_on? @micropost
-      @micropost.unvote_by current_user
-    else
-      @micropost.downvote_by current_user
-    end
-    render "vote.js.erb"
-  end 
-
+  
   def show
     set_meta_tags site: 'Show post'
   end

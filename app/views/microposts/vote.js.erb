@@ -1,3 +1,2 @@
-document.getElementById("upvote-<%= @micropost.id %>").innerHTML = "<%= j render "microposts/upvote_link", micropost: @micropost %>";
+document.getElementById("vote-<%= @micropost.id %>").innerHTML = "<%= j render "microposts/vote_link", micropost: @micropost %>";
 document.getElementById("votes-score-<%= @micropost.id %>").innerHTML = "<%= j render "microposts/votes_score", micropost: @micropost %>";
-document.getElementById("downvote-<%= @micropost.id %>").innerHTML = "<%= j render "microposts/downvote_link", micropost: @micropost %>";

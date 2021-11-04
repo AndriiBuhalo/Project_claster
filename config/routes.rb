@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   resources :microposts do
     member do
-      post "upvote", to: "microposts#upvote"
-      patch "downvote", to: "microposts#downvote"
+      post "vote", to: "microposts#vote"
     end
     resources :comments 
       

@@ -1,9 +1,0 @@
-<%= content_tag "div", id: "downvote-#{micropost.id}" do %>
-  <%= link_to downvote_micropost_path(micropost: micropost), method: :patch, remote: true, data: { disable_with: "voting..." } do %>
-    <% if current_user.voted_down_on? micropost %>
-      unvote
-    <% else %>
-      downvote!
-    <% end %>
-  <% end %>
-<% end %>

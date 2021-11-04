@@ -1,12 +1,11 @@
-
-<%= content_tag "div", id: "upvote-#{micropost.id}" do %>
-  <%= link_to upvote_micropost_path(micropost), method: :post, remote: true do %>
+<%= content_tag "div", id: "vote-#{micropost.id}" do %> 
+  <%= link_to vote_micropost_path(micropost), method: :post, remote: true do %>
     <% if current_user.voted_up_on? micropost %>
       <i class="far fa-thumbs-up" style="color: green;"></i>
-      unvote
+      <span>unvote</span>
       <% else %>
       <i class="far fa-thumbs-up"></i>
-      vote!
+      <span>vote!</span>
     <% end %>
   <% end %>
 <% end %>

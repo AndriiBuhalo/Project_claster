@@ -15,15 +15,14 @@
           <% if  user_signed_in? %>
             <%= render @micropost.comments %>
             <%= render 'comments/form' %>
-            <%= render 'microposts/upvote_link', micropost: @micropost %>
+            <%= render 'microposts/vote_link', micropost: @micropost %>
             <%= render 'microposts/votes_score', micropost: @micropost %>
-            <%= render 'microposts/downvote_link', micropost: @micropost %>
+              <div class="post-edit-btn">
+                <button class="form-btn">
+                  <%= link_to 'Edit', edit_micropost_path(@micropost) %> 
+                  
+                </button>
           <% end %>
-<div class="post-edit-btn">
-  <button class="form-btn">
-           <%= link_to 'Edit', edit_micropost_path(@micropost) %> 
-            
-         </button>
   <button class="form-btn">
            <%= link_to 'Back', microposts_path %>
             
