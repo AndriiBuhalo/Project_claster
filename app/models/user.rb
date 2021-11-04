@@ -6,5 +6,6 @@ class User < ApplicationRecord
   has_many :microposts, dependent: :destroy
   has_many :comments, dependent: :destroy
   
-  acts_as_votable
+  acts_as_voter
+  # acts_as_votable
 end

@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   resources :microposts do
+    member do
+      post "upvote", to: "microposts#upvote"
+      patch "downvote", to: "microposts#downvote"
+    end
     resources :comments 
-      member do
-        patch "upvote", to: "microposts#upvote"
-      end
+      
   end
   
- 
-
   get 'secrets/index'
   devise_for :users
   root to: 'home#index'
