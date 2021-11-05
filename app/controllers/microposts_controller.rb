@@ -15,11 +15,23 @@ class MicropostsController < ApplicationController
   def vote
     
     if current_user.voted_up_on? @micropost
-      @micropost.unvote_by current_user
+      @micropost.unvote_by current_user 
     else
       @micropost.upvote_by current_user
     end
     render "vote.js.erb"
+    
+  end
+
+  def yourvote
+     post = []
+    all = Vote.all.pluck(:voter_id, :votable_id)
+    all.map do|voter, votable| 
+      if voter == current_user.id
+        post << votable
+      end
+    end
+    @microposts = Micropost.where(id: post)
   end
   
   

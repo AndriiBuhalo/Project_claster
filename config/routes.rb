@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'about/index'
+  get 'microposts/yourvote'
   resources :microposts do
     member do
       post "vote", to: "microposts#vote"
