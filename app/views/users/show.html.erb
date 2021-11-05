@@ -1,4 +1,9 @@
-<p id="notice"><%= notice %></p>
+
+<div class="login-form">
+  <h3 class="login-form-title">Show Account</h3>
+
+ 
+
 
 <p>
   <strong>Name:</strong>
@@ -10,5 +15,15 @@
   <%= @user.email %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+
+
+
+  <button class="form-btn">
+    <%= link_to 'Edit', edit_user_path(@user) %>
+  </button>
+  <button class="form-btn">
+    <%= link_to 'Back', users_path %>
+  </button>
+   
+</div>

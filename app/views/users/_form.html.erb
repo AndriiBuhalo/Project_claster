@@ -1,27 +1,36 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= form_with(model: user) do |form| %>
+ 
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-input">
+    <div class="input-icon">
+     <span class="fa fa-user"></span></div>
+    <%= form.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Enter new name... " %> 
+ </div>
+ <br/>
+
+
+ <div class="form-input">
+  <div class="input-icon">
+   <span class="fa fa-envelope"></span>
   </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+ <%= form.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter new email... " %>  
+</div>
+<br/>
+  
+<div class="form-input">
+  <div class="input-icon">
+   <span class="fa fa-lock"></span>
   </div>
+   <%= form.password_field :password, autocomplete: "new-password", placeholder: "Enter new password... " %>
+</div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <button class="form-btn">
+    <%= form.submit "" %>
+   Ok
+</button>
+
+ 
 <% end %>
+
+   

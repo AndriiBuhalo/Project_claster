@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'about/index'
   resources :microposts do
     member do
       post "vote", to: "microposts#vote"
@@ -6,7 +7,6 @@ Rails.application.routes.draw do
     resources :comments 
       
   end
-  
   get 'secrets/index'
   devise_for :users
   root to: 'home#index'

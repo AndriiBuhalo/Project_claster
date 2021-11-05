@@ -18,8 +18,8 @@
   <%= form.text_area :content, placeholder: "Content... "%>
 
 </div>
-  <%= form.label "Add file:" %>
-  <%= form.file_field :cover_picture %>
+  <div class='file-color'><%= form.label "Add file:" %></div>
+  <div class='file-color'><%= form.file_field :cover_picture %></div>
    <%= form.hidden_field :user_id, value: current_user.id %> 
     <button class="form-btn">
         <%= form.submit%>
