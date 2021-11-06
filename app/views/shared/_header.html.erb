@@ -53,7 +53,7 @@
                <li class="nav-item">
                 <a class="nav-link" href="#">
                     <!-- Home -->
-                    <%= link_to 'Home', home_index_path %>
+                    <%= link_to 'Home', microposts_home_path %>
                 </a>
                </li>
                 <% if user_signed_in? %>
@@ -80,7 +80,7 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#">
                       <!-- Secrets -->
-                      <%= link_to 'All Your Like', microposts_yourvote_path %>
+                      <%= link_to 'All Your Likes', microposts_yourvote_path %>
                     </a>
                   </li>
                   <li class="nav-item">

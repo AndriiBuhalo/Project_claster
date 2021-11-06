@@ -1,0 +1,47 @@
+<%= stylesheet_link_tag 'home' %>
+    <div class="main-container">
+      <div class="empty"></div>
+         <div class="content users">
+          <% @top.each do |top|%>
+          <%= link_to top do %>
+          <div class="post top-post">
+            <h4 class="home-title">Top post</h4>
+            <img src="https://t3.ftcdn.net/jpg/03/35/91/90/360_F_335919003_TH0ZtHZZ5QGT34n1NcQXzRGvz4Pthg11.jpg" alt="rating">
+            <p class="post-user-name"><%= top.user.name %></p>
+            <div class="post-content">
+               <h4><%= top.context %></h4>
+               <p><%= top.content %></p>
+            </div>
+           <div class="post-actions">
+             
+               <div class="likes-container">
+                 <div class="far fa-thumbs-up"></div>
+                 <%= p top.cached_votes_score %>
+               </div>
+           </div>
+         </div>  
+               <% end %>
+               <% end %>
+          
+
+           
+         <% @microposts.each do |micropost|%>
+          <%= link_to micropost do %>
+            <div class="post">
+               <p class="post-user-name"><%= micropost.user.name %></p>
+               <div class="post-content">
+                  <h4><%= micropost.context %></h4>
+                  <p><%= micropost.content %></p>
+               </div>
+              <div class="post-actions">
+                
+                  <div class="likes-container">
+                    <div class="far fa-thumbs-up"></div>
+                    <%= p micropost.cached_votes_score %>
+                  </div>
+              </div>
+            </div>  
+                  <% end %>
+                  <% end %>
+         </div>
+      </div>

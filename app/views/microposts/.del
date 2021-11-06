@@ -1,13 +1,12 @@
-<%= stylesheet_link_tag 'microposts' %>
+<!-- <%= stylesheet_link_tag 'microposts' %>
     <div class="main-container">
          <div class="content users">
-         <% @microposts.each do |micropost|%>
-          <%= link_to micropost do %>
+        
             <div class="post">
-               <p class="post-user-name"><%= micropost.user.name %></p>
+               <p class="post-user-name"><%= @all.user.name %></p>
                <div class="post-content">
-                  <h4><%= micropost.context %></h4>
-                  <p><%= micropost.content %></p>
+                  <h4><%= @all.context %></h4>
+                  <p><%= @all.content %></p>
                </div>
               <div class="post-actions">
                 
@@ -17,7 +16,6 @@
                   </div>
               </div>
             </div>  
-                  <% end %>
-                  <% end %>
+                  
          </div>
-      </div>
+      </div> -->
