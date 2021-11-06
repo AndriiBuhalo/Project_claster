@@ -13,7 +13,6 @@ class MicropostsController < ApplicationController
   end
 
   def vote
-    
     if current_user.voted_up_on? @micropost
       @micropost.unvote_by current_user 
     else
@@ -34,9 +33,17 @@ class MicropostsController < ApplicationController
     @microposts = Micropost.where(id: post)
   end
   
+  def home
+    tops = Vote.all.pluck(:votable_id)
+    main = tops.max_by {|i| tops.count(i)}
+    @top = Micropost.where(id: main)
+    @microposts = Micropost.all
+    
+  end
   
   def show
     set_meta_tags site: 'Show post'
+   
   end
 
   def new
