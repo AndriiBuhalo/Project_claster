@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
   get 'secrets/index'
   devise_for :users
-  root to: 'home#index'
+  root to: 'microposts#home'
   resources :users
   resources :home
 end
