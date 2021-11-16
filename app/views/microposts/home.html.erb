@@ -13,34 +13,34 @@
                <p><%= top.content %></p>
             </div>
            <div class="post-actions">
-             
+
                <div class="likes-container">
                  <div class="far fa-thumbs-up"></div>
                  <%= p top.cached_votes_score %>
                </div>
            </div>
-         </div>  
+         </div>
                <% end %>
                <% end %>
-          
 
-           
+
+
          <% @microposts.each do |micropost|%>
           <%= link_to micropost do %>
             <div class="post">
-               <p class="post-user-name"><%= micropost.user.name %></p>
+               <p class="post-user-name"><%= micropost.user.name.capitalize %></p>
                <div class="post-content">
                   <h4><%= micropost.context %></h4>
                   <p><%= micropost.content %></p>
                </div>
               <div class="post-actions">
-                
+
                   <div class="likes-container">
                     <div class="far fa-thumbs-up"></div>
                     <%= p micropost.cached_votes_score %>
                   </div>
               </div>
-            </div>  
+            </div>
                   <% end %>
                   <% end %>
          </div>

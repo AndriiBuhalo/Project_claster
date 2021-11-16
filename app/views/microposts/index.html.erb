@@ -4,7 +4,7 @@
          <% @microposts.each do |micropost|%>
           <%= link_to micropost do %>
             <div class="post">
-               <p class="post-user-name"><%= micropost.user.name %></p>
+               <p class="post-user-name"><%= micropost.user.name.capitalize %></p>
                <div class="post-content">
                   <h4><%= micropost.context %></h4>
                   <p><%= micropost.content %></p>
@@ -18,7 +18,7 @@
                     <%= p micropost.cached_votes_score %>
                   </div>
               </div>
-            </div>  
+            </div>
                   <% end %>
                   <% end %>
          </div>
